@@ -3,8 +3,8 @@ https://www.digitalocean.com/community/developer-center/implementing-gitops-usin
 
 To get the pub cert from sealed-secrets-controller (pub-sealed-secrets-smerdth.pem), had to do the following on the controller node itself:
 
-1. > kubectl port-forward service/sealed-secrets-controller -n flux-system 8081:8080
-2. > curl 127.0.0.1:8081/v1/cert.pem
+* > kubectl port-forward service/sealed-secrets-controller -n flux-system 8081:8080
+* > curl 127.0.0.1:8081/v1/cert.pem
   ```
   -----BEGIN CERTIFICATE-----
   ...
@@ -12,5 +12,7 @@ To get the pub cert from sealed-secrets-controller (pub-sealed-secrets-smerdth.p
   -----END CERTIFICATE-----
   ```
 
-So for cert-manager FluxCD using Helm:
-1. > curl "https://raw.githubusercontent.com/digitalocean/Kubernetes-Starter-Kit-Developers/main/14-continuous-delivery-using-gitops/assets/manifests/fluxcd/helm/repositories/jetstack.yaml" > "${FLUXCD_HELM_MANIFESTS_PATH}/repositories/jetstack.yaml"
+For installing cert-manager using FluxCD/Helm:
+* https://blog.nishanthkp.com/docs/devsecops/gitops/flux/deploy-cert-manager/
+* cert-manager is now running in the cluster
+* next step is to configure cluster issuer with letsencrypt for the *.biffkittz.com domain
