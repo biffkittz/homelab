@@ -11,3 +11,6 @@ To get the pub cert from sealed-secrets-controller (pub-sealed-secrets-smerdth.p
   ...
   -----END CERTIFICATE-----
   ```
+
+So for cert-manager FluxCD using Helm:
+1. > curl "https://raw.githubusercontent.com/digitalocean/Kubernetes-Starter-Kit-Developers/main/14-continuous-delivery-using-gitops/assets/manifests/fluxcd/helm/repositories/jetstack.yaml" > "${FLUXCD_HELM_MANIFESTS_PATH}/repositories/jetstack.yaml"
